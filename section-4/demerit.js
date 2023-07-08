@@ -10,5 +10,4 @@ function checklimit(a){
 
 console.log(checklimit(1000));
 console.log(checklimit(74));
-console.log(checklimit(93));
 
