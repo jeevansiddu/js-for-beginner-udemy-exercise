@@ -40,26 +40,26 @@ function getImageTitle(image) {
   });
 }
 
-// login("jeevan", "123")
-//   .then((user) => {
-//     // console.log("user got");
-//     getImage(user.name);
-//   })
-//   .then((image) => {
-//     console.log("Image got");
-//     console.log(image);
-//     getImageTitle(image[0]);
-//   })
-//   .then((title) => {
-//     // console.log(title);
-//   });
-
 login("jeevan", "123")
-  .then((user) => getImage(user.name))
-  .then((image) => getImageTitle(image[0]))
+  .then((user) => {
+    console.log("user got");
+    return getImage(user.name);
+  })
+  .then((image) => {
+    console.log("Image got");
+    console.log(image);
+    return getImageTitle(image[0]);
+  })
   .then((title) => {
     console.log(title);
   });
+
+// login("jeevan", "123")
+//   .then((user) => getImage(user.name))
+//   .then((image) => getImageTitle(image[0]))
+//   .then((title) => {
+//     console.log(title);
+//   });
 
 // to run the promises all at the same time
 const twitter = new Promise((resolve, reject) => {
